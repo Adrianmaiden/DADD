@@ -7,6 +7,8 @@ def create_app():
     app = Flask(__name__)
     load_dotenv()
 
+    app.config.from_object('config.Config')
+
     # Configuración básica
     app.secret_key = os.getenv('SECRET_KEY', 'secret-key-default')
 
